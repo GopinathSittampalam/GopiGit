@@ -1,15 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
 <?php
-$dbhost = getenv("MYSQL_SERVICE_HOST");
-$dbport = getenv("MYSQL_SERVICE_PORT");
-$dbuser = getenv("databaseuser");
-$dbpwd = getenv("databasepassword");
-$dbname = getenv("databasename");
-$connection = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-if ($connection->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-} else {
-    printf("Connected to the database");
-}
-$connection->close();
+require_once('conf/config.php');
+$query="select * from  Finder_ID_DB";
+    $result=mysqli_query($conn,$query);
+    if (!$result) {
+      die("could not perform query".mysqli_error($conn));
+    }
+    else{
+ 
+          while ($rows=mysqli_fetch_assoc($result)) {
+          	echo "<tr>";
+          	echo "<td>".$rows['Finger_id']."</td>";
+          	echo "<td>".$rows['Student_reg']."</td>";
+    		echo "</tr>";
+          
+      }
+  }
+  mysql_close();
 ?>
+</table>
+</body>
+</html>
