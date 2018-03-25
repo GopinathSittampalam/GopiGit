@@ -22,7 +22,7 @@ $query="select * from  Finder_ID_DB";
           
       }
   }
-  mysql_close($conn);
+  mysqli_close($conn);
 ?>
 </table>
 </body>
