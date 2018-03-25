@@ -5,6 +5,10 @@
 </head>
 <body>
 <table border="1">
+  <tr>
+    <td>FID</td>
+    <td>student ID</td>
+  </tr>
 <?php
 require_once('conf/config.php');
 $query="select * from  Finder_ID_DB";
@@ -16,9 +20,9 @@ $query="select * from  Finder_ID_DB";
  
           while ($rows=mysqli_fetch_assoc($result)) {
           	echo "<tr>";
-          	echo "<td>".$rows['Finger_id']."</td>";
-          	echo "<td>".$rows['Student_reg']."</td>";
-    		echo "</tr>";
+            	echo "<td>".$rows['Finger_id']."</td>";
+            	echo "<td>".$rows['Student_reg']."</td>";
+    		    echo "</tr>";
           
       }
   }
