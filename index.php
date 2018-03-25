@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-<table>
+<table border="1">
 <?php
 require_once('conf/config.php');
 $query="select * from  Finder_ID_DB";
@@ -22,7 +22,7 @@ $query="select * from  Finder_ID_DB";
           
       }
   }
-  mysql_close();
+  mysql_close($conn);
 ?>
 </table>
 </body>
