@@ -7,7 +7,11 @@
 <table>
 <?php
 require_once('conf/config.php');
-$query="select * from  Finder_ID_DB";
+
+echo DB_SEVER;
+echo  DB_USER;
+
+/*$query="select * from  Finder_ID_DB";
     $result=mysqli_query($conn,$query);
     if (!$result) {
       die("could not perform query".mysqli_error($conn));
@@ -21,7 +25,7 @@ $query="select * from  Finder_ID_DB";
     		echo "</tr>";
           
       }
-  }
+  }*/
   mysql_close();
 ?>
 </table>
